@@ -1,0 +1,26 @@
+{
+  "name": "space_travel",
+  "version": "1.0.0",
+  "description": "A Node App that calculates the fastest travel option for fictitious space travel.",
+  "main": "main.js",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kwenamokgohlwa/space_travel.git"
+  },
+  "keywords": [
+    "Node",
+    "TDD"
+  ],
+  "author": "Kwena Mokgohlwa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kwenamokgohlwa/space_travel/issues"
+  },
+  "homepage": "https://github.com/kwenamokgohlwa/space_travel#readme",
+  "dependencies": {
+    "jasmine": "^4.1.0"
+  }
+}
