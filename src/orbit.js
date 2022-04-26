@@ -1,7 +1,5 @@
 class Orbit {
 
- // - Constructor [Default]
-
  constructor(extender = { orbitLimit1: 12, orbitLimit2: 10 }, reducer = -10) {
   this.orbit = ((extender, reducer) => {
    let orbits = {
@@ -23,7 +21,6 @@ class Orbit {
   })(extender, reducer);
  }
 
- // - Getter Method
  getOrbit() {
   return this.orbit;
  }
