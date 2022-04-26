@@ -3,9 +3,9 @@ class Vehicle {
  constructor(extender = {orbit1: 12, orbit2: 10}, reducer = [""]) {
   this.vehicle = ((extender, reducer) => {
    let vehicles = {
-    bike: this._buildVehicle("bike", extender, 10, 2),
-    tuktuk: this._buildVehicle("tuktuk", extender, 12, 1),
-    car: this._buildVehicle("car", extender, 20, 3)
+    bike: this._buildVehicle("Bike", extender, 10, 2),
+    tuktuk: this._buildVehicle("TukTuk", extender, 12, 1),
+    car: this._buildVehicle("Car", extender, 20, 3)
    }
 
    reducer.forEach((vehicle) =>  {

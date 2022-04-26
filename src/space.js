@@ -9,33 +9,33 @@ class Space {
             let orbit = new Orbit(speedReducer, this._weatherReducer(weather).orbit).getOrbit();
             let vehicle = new Vehicle(speedReducer, this._weatherReducer(weather).vehicle).getVehicle();
 
-            let travelOptions = [];
-            let reducedTravelOptions = [];
+            let trips = [];
+            let reducedTrips = [];
 
             for(const optionVehicle in vehicle)  {
                 for(const optionOrbit in vehicle[optionVehicle]) {
-                    travelOptions.push({orbit: orbit[optionOrbit], vehicle: vehicle[optionVehicle][optionOrbit]});
+                    trips.push({orbit: orbit[optionOrbit], vehicle: vehicle[optionVehicle][optionOrbit]});
                 }
             }
 
-            travelOptions.forEach((trip) => {
-                reducedTravelOptions.push(this._travel(trip.orbit, trip.vehicle));
+            trips.forEach((trip) => {
+                reducedTrips.push(this._trip(trip.orbit, trip.vehicle));
             })
 
-            return this._reduceTravel(reducedTravelOptions);
+            return this._reduceTrips(reducedTrips);
         })();
     }
 
     _weatherReducer(condition = "sunny") {
         let weather = new Weather(condition);
-        return { orbit: weather.getCrater(), vehicle: weather.getVehicle() };
+        return { orbit: weather.getOrbit(), vehicle: weather.getVehicle() };
     };
 
-    _travel(orbit, vehicle) {
+    _trip(orbit, vehicle) {
        return {orbit, vehicle, time: ((orbit.mm)/(vehicle.vehicleSpeed) + (vehicle.craterSpeed * orbit.craters)/(60))};
     }
 
-    _reduceTravel(travel = []) {
+    _reduceTrips(travel = []) {
         let optimalRoute = travel.reduce((minimum, next) => {
             return Math.min(minimum.time, next.time) >= minimum.time ? minimum : next;
         }, Number.MAX_SAFE_INTEGER);
@@ -44,7 +44,7 @@ class Space {
     }
 
     toString() {
-        return JSON.stringify(this.space);
+        return "Vehicle " + this.space.vehicle.name + " on " + this.space.orbit.name;
     }
 }
 

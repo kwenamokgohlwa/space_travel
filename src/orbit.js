@@ -6,13 +6,13 @@ class Orbit {
   this.orbit = ((extender, reducer) => {
    let orbits = {
     orbit1: {
-     name: "orbit1",
+     name: "Orbit1",
      limit: extender.orbitLimit1, mm: 18, craters: ((amount) => {
       return amount + (amount / 100) * reducer;
      })(20)
     },
     orbit2: {
-     name: "orbit2",
+     name: "Orbit2",
      limit: extender.orbitLimit2, mm: 20, craters: ((amount) => {
       return amount + (amount / 100) * reducer;
      })(10)

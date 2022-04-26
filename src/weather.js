@@ -12,7 +12,7 @@ class Weather {
    })(weather);
   }
 
-  getCrater() {
+  getOrbit() {
    return this.weather.craterReducer;
   }
 
